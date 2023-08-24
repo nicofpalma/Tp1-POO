@@ -1,14 +1,16 @@
-package ar.edu.unlu.poo.punto1;
+package ar.edu.unlu.poo.punto2;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ListaEnlazada listaEnlazada = new ListaEnlazada();
+        ListaEnlazadaDoble listaEnlazadaDoble = new ListaEnlazadaDoble();
         Scanner sc = new Scanner(System.in);
         int opcion;
+        String aceptar;
 
         do {
-            System.out.println("Menú (LISTA ENLAZADA SIMPLE):");
+            System.out.println("Menú (LISTA ENLAZADA DOBLE):");
             System.out.println("1. Agregar un nodo al final");
             System.out.println("2. Mostrar la lista");
             System.out.println("3. Verificar si la lista está vacía");
@@ -34,7 +36,7 @@ public class Main {
                     System.out.print("Ingrese el dato a agregar: ");
                     String dato = sc.next();
                     separador();
-                    listaEnlazada.agregarAlFinal(dato);
+                    listaEnlazadaDoble.agregarAlFinal(dato);
                     System.out.println("Dato agregado al final de la lista: " + dato);
                     separador();
                     System.out.print("Presione enter para continuar");
@@ -44,7 +46,7 @@ public class Main {
                     break;
                 case 2:
                     separador();
-                    System.out.println("Lista:\n" + listaEnlazada + "\n");
+                    System.out.println("Lista:\n" + listaEnlazadaDoble + "\n");
                     separador();
                     System.out.print("Presione enter para continuar");
                     sc.nextLine();
@@ -52,10 +54,10 @@ public class Main {
                     break;
                 case 3:
                     separador();
-                    if(listaEnlazada.estaVacia()){
+                    if(listaEnlazadaDoble.estaVacia()){
                         System.out.println("La lista está vacía.");
                     } else {
-                        System.out.println("La lista no está vacía, contiene " + listaEnlazada.getLongitud() + " elementos");
+                        System.out.println("La lista no está vacía, contiene " + listaEnlazadaDoble.getLongitud() + " elementos");
                     }
                     separador();
                     System.out.print("Presione enter para continuar");
@@ -66,7 +68,7 @@ public class Main {
                     separador();
                     System.out.print("Ingrese la posición a eliminar: ");
                     int posicionEliminar = sc.nextInt();
-                    if(listaEnlazada.eliminarPorPosicion(posicionEliminar)){
+                    if(listaEnlazadaDoble.eliminarPorPosicion(posicionEliminar)){
                         System.out.println("Elemento en la posición " + posicionEliminar + " eliminado con éxito de la lista.");
                     } else {
                         System.out.println("El elemento en la posición " + posicionEliminar + " no se pudo eliminar de la lista porque no existe");
@@ -83,10 +85,10 @@ public class Main {
                     int posicionAgregar = sc.nextInt();
                     System.out.print("Ingrese el dato a agregar: ");
                     String datoNuevo = sc.next();
-                    if(listaEnlazada.agregarPorPosicion(datoNuevo, posicionAgregar)){
+                    if(listaEnlazadaDoble.agregarPorPosicion(datoNuevo, posicionAgregar)){
                         System.out.println("Dato [" + datoNuevo + "] agregado con éxito en la posición " + posicionAgregar);
                     } else {
-                        System.out.println("No se pudo agregar el dato en esa posición, ya que la lista posee una longitud de " + listaEnlazada.getLongitud() + ". Intente con otra posición.");
+                        System.out.println("No se pudo agregar el dato en esa posición, ya que la lista posee una longitud de " + listaEnlazadaDoble.getLongitud() + ". Intente con otra posición.");
                     }
                     separador();
                     System.out.println("Presione enter para continuar");
@@ -98,7 +100,7 @@ public class Main {
                     separador();
                     System.out.print("Ingrese la posición para recuperar el dato: ");
                     int posicionRecuperar = sc.nextInt();
-                    Nodo nodoRecuperado = listaEnlazada.recuperarPorPosicion(posicionRecuperar);
+                    Nodo nodoRecuperado = listaEnlazadaDoble.recuperarPorPosicion(posicionRecuperar);
                     if (nodoRecuperado != null) {
                         System.out.println("Dato encontrado [ " + nodoRecuperado.getDato() + " ]") ;
                     } else {
@@ -112,7 +114,7 @@ public class Main {
                     break;
                 case 7:
                     separador();
-                    System.out.println("Longitud de la lista: " + listaEnlazada.getLongitud());
+                    System.out.println("Longitud de la lista: " + listaEnlazadaDoble.getLongitud());
                     separador();
                     System.out.println("Presione enter para continuar");
                     sc.nextLine();

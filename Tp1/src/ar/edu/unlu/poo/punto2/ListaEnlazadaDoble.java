@@ -1,28 +1,32 @@
-package ar.edu.unlu.poo.punto1;
+package ar.edu.unlu.poo.punto2;
 
-public class ListaEnlazada {
+public class ListaEnlazadaDoble {
     private Nodo cabeza = null;
 
     private int longitud = 0;
 
-    // Método para agregar un nodo a la lista
+    public int getLongitud(){
+        return longitud;
+    }
+
     public boolean agregarAlFinal(Object dato){
         Nodo nuevoNodo = new Nodo();
         nuevoNodo.setDato(dato);
+
         if(estaVacia()){
             cabeza = nuevoNodo;
         } else {
-            Nodo nodoAux = cabeza;
-            while(nodoAux.getSiguiente() != null){
-                nodoAux = nodoAux.getSiguiente();
+            Nodo nodoAnterior = cabeza;
+            while(nodoAnterior.getSiguiente() != null){
+                nodoAnterior = nodoAnterior.getSiguiente();
             }
-            nodoAux.setSiguiente(nuevoNodo);
+            nodoAnterior.setSiguiente(nuevoNodo);
+            nuevoNodo.setAnterior(nodoAnterior);
         }
         longitud++;
         return true;
     }
 
-    // Método para mostrar los nodos de la lista y sus datos
     public String toString(){
         String acumulador = "";
         int i = 1;
@@ -40,30 +44,34 @@ public class ListaEnlazada {
         return acumulador;
     }
 
-    // Verifica si la lista está vacía
     public boolean estaVacia(){
         return cabeza == null;
     }
 
-    // Devuelve la longitud de la lista
-    public int getLongitud(){
-        return longitud;
-    }
-
-    // Elimina un elemento ubicado en cierta posición pasada por parámetro
     public boolean eliminarPorPosicion(int posicion){
         boolean exito = false;
         if(posicion > 0 && !estaVacia() && posicion <= longitud){
             Nodo nodoActual = cabeza;
             Nodo nodoAnterior = null;
+
             if(posicion == 1){
                 cabeza = cabeza.getSiguiente();
+                if(cabeza != null){
+                    cabeza.setAnterior(null);
+                }
                 exito = true;
                 longitud--;
             } else {
                 for(int i = 1; i <= posicion; i++){
                     if(i == posicion){
-                        nodoAnterior.setSiguiente(nodoAnterior.getSiguiente().getSiguiente());
+                        if(posicion != longitud){
+                            Nodo nodoSiguiente = nodoAnterior.getSiguiente().getSiguiente();
+                            nodoAnterior.setSiguiente(nodoSiguiente);
+                            nodoSiguiente.setAnterior(nodoAnterior);
+                        } else {
+                            nodoAnterior.setSiguiente(null);
+                        }
+
                         nodoActual = null;
                         exito = true;
                         longitud--;
@@ -102,7 +110,6 @@ public class ListaEnlazada {
             nuevoNodo.setDato(dato);
             Nodo nodoActual = cabeza;
             Nodo nodoAnterior = null;
-            // Insertar en la primera posicion
             if(posicion == 1){
                 nuevoNodo.setSiguiente(nodoActual);
                 cabeza = nuevoNodo;
@@ -117,7 +124,10 @@ public class ListaEnlazada {
                             // Cuando el proximo nodo de la posición en donde se quiere insertar el elemento es diferente de nulo
                             // Es decir, cuando se quiere insertar en un lugar intermedio de la lista
                             nodoAnterior.setSiguiente(nuevoNodo);
+                            nuevoNodo.setAnterior(nodoAnterior);
+
                             nuevoNodo.setSiguiente(nodoActual);
+                            nodoActual.setAnterior(nuevoNodo);
 
                             exito = true;
                             longitud++;
@@ -133,4 +143,5 @@ public class ListaEnlazada {
         }
         return exito;
     }
+
 }
