@@ -7,7 +7,6 @@ public class Main {
         ListaEnlazadaDoble listaEnlazadaDoble = new ListaEnlazadaDoble();
         Scanner sc = new Scanner(System.in);
         int opcion;
-        String aceptar;
 
         do {
             System.out.println("Menú (LISTA ENLAZADA DOBLE):");
