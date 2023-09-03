@@ -30,4 +30,4 @@
 
 #### [Ejercicio 12: Administrador de tareas](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto5) - (La resolución se encuentra dentro de punto5, donde está todo lo relativo a las tareas)
 
-### [Ejercicio 13: Extensión 2 de clase tarea](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto5) - (La resolución se encuentra dentro de punto5, donde está todo lo relativo a las tareas)
+#### [Ejercicio 13: Extensión 2 de clase tarea](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto5) - (La resolución se encuentra dentro de punto5, donde está todo lo relativo a las tareas)
