@@ -49,11 +49,7 @@ public class Pila {
         Object nodoDesapilado;
         if(!estaVacia()){
             nodoDesapilado = tope.getDato();
-            if(longitud == 1){
-                tope = null;
-            } else {
-                tope = tope.getAnterior();
-            }
+            tope = tope.getAnterior();
             longitud--;
         } else {
             nodoDesapilado = null;
