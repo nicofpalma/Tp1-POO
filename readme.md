@@ -1,5 +1,9 @@
-# Tp1 Programación Orientada a Objetos
-## Universidad Nacional de Luján
+## Tp1 Programación Orientada a Objetos - Universidad Nacional de Luján
+
+### ***Nombre: Nicolás Fernández Palma***
+### ***Legajo: 182796***
+
+---
 
 #### [Ejercicio 1: Lista enlazada simple](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto1)
 
@@ -25,5 +29,3 @@
 #### [Ejercicio 11: Juego de palabras](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto11)
 
 #### [Ejercicio 12: Administrador de tareas](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto5) - (La resolución se encuentra dentro de punto5, donde está todo lo relativo a las tareas)
-
-#### [Ejercicio 13: Extensión 2 de clase tarea](https://github.com/nicofpalma/Tp1-POO/tree/main/Tp1/src/ar/edu/unlu/poo/punto5) - (La resolución se encuentra dentro de punto5, donde está todo lo relativo a las tareas)
